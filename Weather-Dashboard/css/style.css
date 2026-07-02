@@ -1,186 +1,29 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+*{    margin:0;    padding:0;    box-sizing:border-box;    font-family:Arial,sans-serif;}
 
-body{
+body{    display:flex;    justify-content:center;    align-items:center;    min-height:100vh;    background:linear-gradient(135deg,#4facfe,#00f2fe);}
 
-    min-height:100vh;
+.container{    width:360px;    padding:35px;    background:rgba(255,255,255,.18);    backdrop-filter:blur(12px);    border-radius:20px;    box-shadow:0 10px 25px rgba(0,0,0,.2);    animation:fade .7s;}
 
-    display:flex;
+h1{    text-align:center;    margin-bottom:25px;    color:white;}
 
-    justify-content:center;
+form{    display:flex;    flex-direction:column;    gap:15px;}
 
-    align-items:center;
+input{    padding:14px;    border:none;    border-radius:10px;    font-size:16px;}
 
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
+input:focus{    outline:none;    box-shadow:0 0 10px white;}
 
-    transition:.6s;
-}
+button{    padding:14px;    border:none;    border-radius:10px;    background:#0066ff;    color:white;    font-size:16px;    cursor:pointer;    transition:.3s;}
 
-.container{
+button:hover{    background:#004ecc;    transform:translateY(-2px);}
 
-    width:90%;
-    max-width:800px;
+#error{    text-align:center;    color:#ffdddd;    min-height:20px;}
 
-    padding:30px;
+.demo-login{    margin-top:10px;    padding:12px;    background:rgba(255,255,255,0.2);    border-radius:10px;    text-align:left;    color:white;    font-size:14px;    border-left:4px solid #ffffff;}
 
-    text-align:center;
-}
+.demo-login h3{    margin-bottom:8px;    font-size:16px;}
 
-.search-box{
+.demo-login p{    margin:4px 0;}
 
-    margin:25px 0;
+.demo-login strong{    color:#fff;}
 
-    display:flex;
-
-    gap:10px;
-
-    justify-content:center;
-}
-
-input{
-
-    width:70%;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:10px;
-
-    font-size:16px;
-}
-
-button{
-
-    padding:12px 20px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#0077ff;
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-button:hover{
-
-    transform:scale(1.05);
-
-}
-
-.weather-card{
-
-    background:rgba(255,255,255,.2);
-
-    backdrop-filter:blur(12px);
-
-    padding:25px;
-
-    border-radius:20px;
-
-    color:white;
-
-    animation:fade .7s;
-
-    margin-bottom:25px;
-}
-
-.weather-card img{
-
-    width:100px;
-}
-
-.details{
-
-    display:flex;
-
-    justify-content:space-around;
-
-    margin-top:20px;
-}
-
-.forecast{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.forecast-card{
-
-    flex:1;
-
-    min-width:150px;
-
-    background:rgba(255,255,255,.2);
-
-    backdrop-filter:blur(12px);
-
-    color:white;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    transition:.3s;
-}
-
-.forecast-card:hover{
-
-    transform:translateY(-8px);
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-}
-
-@media(max-width:700px){
-
-.details{
-
-flex-direction:column;
-gap:10px;
-
-}
-
-.search-box{
-
-flex-direction:column;
-
-}
-
-input{
-
-width:100%;
-
-}
-
-}
+@keyframes fade{    from{        opacity:0;        transform:translateY(20px);    }    to{        opacity:1;        transform:translateY(0);    }}

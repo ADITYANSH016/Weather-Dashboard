@@ -34,8 +34,11 @@ async function getWeather(cityName) {
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&days=3`;
 
     try {
+        document.getElementById("loading").textContent = "Loading...";
         const response = await fetch(url);
         const data = await response.json();
+
+        document.getElementById("loading").textContent = "";
 
         if (data.error) {
             alert("City not found.");
@@ -44,11 +47,13 @@ async function getWeather(cityName) {
 
         displayWeather(data);
     } catch (error) {
+        document.getElementById("loading").textContent = "";
         alert("Unable to fetch weather.");
     }
 }
 
 function displayWeather(data) {
+    document.getElementById("weatherCard").style.display = "block";
     city.textContent = data.location.name;
     temp.textContent = data.current.temp_c + "°C";
     condition.textContent = data.current.condition.text;
@@ -57,7 +62,7 @@ function displayWeather(data) {
     icon.src = "https:" + data.current.condition.icon;
     showForecast(data.forecast.forecastday);
     changeBackground(data.current.condition.text);
-    weatherCard.style.display = "block";
+    forecast.style.display = "flex";
 }
 
 function showForecast(days) {
@@ -65,7 +70,7 @@ function showForecast(days) {
     days.forEach(function (day) {
         forecast.innerHTML += `
         <div class="forecast-card">
-            <h3>${day.date}</h3>
+            <h3>${new Date(day.date).toLocaleDateString("en-US", {weekday: "short"})}</h3>
             <img src="https:${day.day.condition.icon}" alt="${day.day.condition.text}">
             <p>${day.day.avgtemp_c}°C</p>
             <p>${day.day.condition.text}</p>
@@ -89,3 +94,5 @@ function changeBackground(weather) {
             "linear-gradient(135deg,#83a4d4,#b6fbff)";
     }
 }
+
+getWeather("Delhi");

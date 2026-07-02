@@ -54,95 +54,21 @@ input{
     font-size:16px;
 }
 
-button{
+button{transition:.3s;padding:12px 20px;border:none;border-radius:10px;background:#0077ff;color:white;cursor:pointer;}
 
-    padding:12px 20px;
+button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2);}
 
-    border:none;
+.weather-card{display:none;background:rgba(255,255,255,.2);backdrop-filter:blur(12px);padding:25px;border-radius:20px;color:white;animation:fade .7s;margin-bottom:25px;}
 
-    border-radius:10px;
+.weather-card img{width:100px;animation: float 2s infinite ease-in-out;}
 
-    background:#0077ff;
+.details{display:flex;justify-content:space-around;margin-top:20px;}
 
-    color:white;
+.forecast{display:none;justify-content:space-between;gap:15px;flex-wrap:wrap;}
 
-    cursor:pointer;
+.forecast-card{flex:1;min-width:150px;background:rgba(255,255,255,.2);backdrop-filter:blur(12px);color:white;padding:20px;border-radius:15px;transition:.4s;}
 
-    transition:.3s;
-}
-
-button:hover{
-
-    transform:scale(1.05);
-
-}
-
-.weather-card{
-
-    background:rgba(255,255,255,.2);
-
-    backdrop-filter:blur(12px);
-
-    padding:25px;
-
-    border-radius:20px;
-
-    color:white;
-
-    animation:fade .7s;
-
-    margin-bottom:25px;
-}
-
-.weather-card img{
-
-    width:100px;
-    animation: float 2s infinite ease-in-out;
-}
-
-.details{
-
-    display:flex;
-
-    justify-content:space-around;
-
-    margin-top:20px;
-}
-
-.forecast{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.forecast-card{
-
-    flex:1;
-
-    min-width:150px;
-
-    background:rgba(255,255,255,.2);
-
-    backdrop-filter:blur(12px);
-
-    color:white;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    transition:.3s;
-}
-
-.forecast-card:hover{
-
-    transform:translateY(-8px);
-}
+.forecast-card:hover{transform:translateY(-10px);cursor:pointer;}
 
 @keyframes fade{
 
@@ -163,6 +89,12 @@ button:hover{
     }
 }
 
+#loading{font-size:20px;color:white;margin:20px;font-weight:bold;}
+
+input{transition:.3s;}
+
+input:focus{transform:scale(1.02);box-shadow:0 0 15px rgba(255,255,255,.5);}
+
 img{
     animation: float 2s infinite ease-in-out;
 }
@@ -175,9 +107,11 @@ img{
         transform: translateY(-8px);
     }
     100%{
-        transform: translateY(0);
+        transform:translateY(0);
     }
 }
+
+footer{margin-top:40px;color:white;font-size:14px;text-align:center;}
 
 @media(max-width:700px){
 
