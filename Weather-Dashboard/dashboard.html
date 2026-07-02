@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Dashboard</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="brand">Weather Dashboard</div>
-    <button id="logoutBtn" class="button-secondary">Log Out</button>
-  </header>
 
-  <main class="container dashboard-grid">
-    <section class="card forecast-card">
-      <h2>Current Weather</h2>
-      <div id="weatherSummary">Select a city to view weather details.</div>
-    </section>
+    <div class="container">
 
-    <section class="card city-card">
-      <h2>Choose a City</h2>
-      <div class="city-grid">
-        <button class="city-button" data-city="New York">New York</button>
-        <button class="city-button" data-city="London">London</button>
-        <button class="city-button" data-city="Tokyo">Tokyo</button>
-        <button class="city-button" data-city="Sydney">Sydney</button>
-      </div>
-    </section>
-  </main>
+        <h1>🌤 Weather Dashboard</h1>
 
-  <script>
-    document.getElementById('logoutBtn').addEventListener('click', function() {
-      window.location.href = 'index.html';
-    });
-  </script>
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name">
+
+            <button id="searchBtn">
+                Search
+            </button>
+
+        </div>
+
+        <div id="weatherCard" class="weather-card">
+
+            <h2 id="city">City</h2>
+
+            <img id="icon" src="" alt="Weather Icon">
+
+            <h1 id="temp">--°C</h1>
+
+            <p id="condition">Condition</p>
+
+            <div class="details">
+
+                <p>💧 Humidity: <span id="humidity">--</span>%</p>
+
+                <p>💨 Wind: <span id="wind">--</span> km/h</p>
+
+            </div>
+
+        </div>
+
+        <h2>3-Day Forecast</h2>
+
+        <div id="forecast" class="forecast">
+
+        </div>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
 </body>
+
 </html>

@@ -97,6 +97,7 @@ button:hover{
 .weather-card img{
 
     width:100px;
+    animation: float 2s infinite ease-in-out;
 }
 
 .details{
@@ -159,6 +160,22 @@ button:hover{
 
         transform:translateY(0);
 
+    }
+}
+
+img{
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
 
