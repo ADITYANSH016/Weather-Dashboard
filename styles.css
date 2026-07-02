@@ -110,6 +110,16 @@ button:hover {
   border-radius: 16px;
 }
 
+.weather-card {
+  display: grid;
+  gap: 8px;
+}
+
+.weather-card img {
+  width: 64px;
+  height: 64px;
+}
+
 .status-label,
 .eyebrow {
   text-transform: uppercase;
